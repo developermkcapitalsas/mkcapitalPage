@@ -1,0 +1,25 @@
+{
+  "name": "mkcapital",
+  "version": "1.0.0",
+  "description": "Página central de la empresa MK Capital SAS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkcapitalsas/mkcapitalPage.git"
+  },
+  "keywords": [
+    "mkcapital",
+    "MK",
+    "Capital",
+    "SAS"
+  ],
+  "author": "Cristian Franco Bedoya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkcapitalsas/mkcapitalPage/issues"
+  },
+  "homepage": "https://github.com/mkcapitalsas/mkcapitalPage#readme"
+}
