@@ -4,6 +4,7 @@
   "description": "Página central de la empresa MK Capital SAS",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/mkcapitalsas/mkcapitalPage/issues"
   },
-  "homepage": "https://github.com/mkcapitalsas/mkcapitalPage#readme"
+  "homepage": "https://github.com/mkcapitalsas/mkcapitalPage#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
