@@ -1,7 +1,8 @@
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 5000;
-app.use('/', express.static(__dirname + '/'));
-app.listen(port);
 
-console.log('Aplicación corriendo en: http://localhost:' + port);
+const app = require('./app');
+const config = require('./config')
+
+
+app.listen(config.port , function (){
+    console.log(`Aplicación corriendo en htpp://localhost:${config.port}`)
+});
