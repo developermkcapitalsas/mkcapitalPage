@@ -24,7 +24,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="/css/master.css">
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -130,18 +130,22 @@
             </div>
         </div>
 
-            <div class="row no-gutter popup-gallery">
+            <div class="row no-gutter">
                 <!--Telefonista
                 <div class="col-lg-4 col-sm-4 col-xs-4">
                   <img src="img/portfolio/telephone/support-1120755_640.jpg" class="img-responsive" alt="">
                 </div>-->
                 <!--Teléfono-->
-                <div class="col-lg-6 col-sm-6 col-xs-6">
+                <div class="col-lg-4 col-sm-4 col-xs-4">
                   <img src="img/portfolio/telephone/telephone-1223310_640.jpg" class="img-responsive" alt="">
                 </div>
                 <!--HOMBRE-->
-                <div class="col-lg-6 col-sm-6 col-xs-6">
+                <div class="col-lg-4 col-sm-4 col-xs-4">
                   <img src="img/portfolio/telephone/telephone-586266_640.jpg" class="img-responsive" alt="">
+                </div>
+                <!--Teléfono-->
+                <div class="col-lg-4 col-sm-4 col-xs-4">
+                  <img src="img/portfolio/telephone/telephone-1223310_640.jpg" class="img-responsive" alt="">
                 </div>
             </div>
             <!--DISEÑADOR-->
@@ -158,6 +162,49 @@
  <!--/SERVICIOS-->
 
  <!--CONTACTO-->
+ <section id="contact" class="map">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d360.42159934168666!2d-75.58646141666912!3d6.173926823432401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46824e2c3af635%3A0xd91130977f0b9106!2sAv.+El+Poblado+%2332b+Sur-108+a+32b+Sur-136%2C+Envigado%2C+Antioquia!5e0!3m2!1ses!2sco!4v1483809350024" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>"></iframe>
+      <br />                                                                                                  https://www.google.com.co/maps/place/
+      <small>
+          <a href="https://www.google.com.co/maps/place/Cra+43A+%2333S-14,+Envigado,+Antioquia/@6.1734592,-75.5888051,17z/data=!3m1!4b1!4m5!3m4!1s0x8e46824e3aab5525:0x66feda21d079f16e!8m2!3d6.1734539!4d-75.5866164?hl=es"></a>
+      </small>
+      </iframe>
+      <footer>
+            <div class="container restar">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <h4><strong>MK Capital S.A.S</strong>
+                        </h4>
+                        <p>3481 Melrose Place
+                            <br>Beverly Hills, CA 90210</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                            <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            </li>
+                        </ul>
+                        <hr class="small">
+                        <p class="text-muted">Copyright &copy; MK Capital S.A.S 2017</p>
+                    </div>
+                </div>
+            </div>
+            <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+        </footer>
+  </section>
+
+
+ <!--
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -181,30 +228,41 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
  <!--/CONTACTO-->
 
- <!--COPYRIGHT-->
-    <div class="container">
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; MK Capital S.A.S 2017</p>
-                </div>
-            </div>
-        </footer>
-    </div>
- <!--/COPYRIGHT-->
 
  <!--SCRIPTS-->
+
+
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
