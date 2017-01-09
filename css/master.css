@@ -1,5 +1,6 @@
 .damion{
-  font-family: 'Pacifico', cursive;
+  font-family: 'inherit', cursive;
+  font-size: 50px;
 }
 .ancho{
   width: 70%;
@@ -8,7 +9,7 @@
 /* Map */
 
 .map {
-    height: 700px;
+    height: 500px;
 }
 
 @media(max-width:768px) {
@@ -26,7 +27,6 @@
 footer {
     padding: 20px;
 }
-
 #to-top {
   display: none;
   position: fixed;
